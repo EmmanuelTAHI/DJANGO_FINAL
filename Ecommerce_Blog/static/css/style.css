@@ -24251,6 +24251,7 @@ body.woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-va
       font-family: var(--font-family-title); }
     .profile-dropdown .nav-link .profile-info .title {
       font-weight: 600;
+      text-transform: capitalize;
       margin-bottom: 0; }
 
 .extra-nav .extra-cell .header-right {
@@ -24312,6 +24313,8 @@ body.woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-va
     border-bottom: 1px dashed rgba(0, 0, 0, 0.1); }
   .profile-dropdown .dropdown-menu .dropdown-header {
     border-bottom: 1px dashed rgba(0, 0, 0, 0.1); }
+  .profile-dropdown .dropdown-menu .dropdown-header h6 {
+    text-transform: capitalize; }
   .profile-dropdown .dropdown-menu .dropdown-footer {
     padding: 15px 20px; }
 
