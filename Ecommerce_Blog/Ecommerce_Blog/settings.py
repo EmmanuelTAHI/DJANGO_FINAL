@@ -84,6 +84,23 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'index'  # Ou une autre page après connexion
+LOGOUT_REDIRECT_URL = 'index'  # Après déconnexion
+
+# SMTP
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Serveur SMTP (ex: Gmail)
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'emmanueltahi14@gmail.com'  # Remplace par ton email
+EMAIL_HOST_PASSWORD = 'srzc woei bgdy vens'
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
