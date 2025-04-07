@@ -94,13 +94,13 @@
                                     <li class="cart-item">
                                         <div class="media">
                                             <div class="media-left">
-                                                <a href="{% url 'book_detail' %}">
+                                                <a href="{% url 'book-detail' %}">
                                                     <img alt="" class="media-object"
                                                          src="{% static 'images/books/small/pic1.jpg' %}">
                                                 </a>
                                             </div>
                                             <div class="media-body">
-                                                <h6 class="dz-title"><a href="{% url 'book_detail' %}"
+                                                <h6 class="dz-title"><a href="{% url 'book-detail' %}"
                                                                         class="media-heading">Real Life</a></h6>
                                                 <span class="dz-price">$28.00</span>
                                                 <span class="item-close">×</span>
@@ -110,13 +110,13 @@
                                     <li class="cart-item">
                                         <div class="media">
                                             <div class="media-left">
-                                                <a href="{% url 'book_detail' %}">
+                                                <a href="{% url 'book-detail' %}">
                                                     <img alt="" class="media-object"
                                                          src="{% static 'images/books/small/pic2.jpg' %}">
                                                 </a>
                                             </div>
                                             <div class="media-body">
-                                                <h6 class="dz-title"><a href="{% url 'book_detail' %}"
+                                                <h6 class="dz-title"><a href="{% url 'book-detail' %}"
                                                                         class="media-heading">Home</a></h6>
                                                 <span class="dz-price">$28.00</span>
                                                 <span class="item-close">×</span>
@@ -126,13 +126,13 @@
                                     <li class="cart-item">
                                         <div class="media">
                                             <div class="media-left">
-                                                <a href="{% url 'book_detail' %}">
+                                                <a href="{% url 'book-detail' %}">
                                                     <img alt="" class="media-object"
                                                          src="{% static 'images/books/small/pic3.jpg' %}">
                                                 </a>
                                             </div>
                                             <div class="media-body">
-                                                <h6 class="dz-title"><a href="{% url 'book_detail' %}"
+                                                <h6 class="dz-title"><a href="{% url 'book-detail' %}"
                                                                         class="media-heading">Such a fun age</a></h6>
                                                 <span class="dz-price">$28.00</span>
                                                 <span class="item-close">×</span>
@@ -143,9 +143,9 @@
                                         <h6 class="text-secondary">Total = $500</h6>
                                     </li>
                                     <li class="text-center d-flex">
-                                        <a href="{% url 'shop_cart' %}"
+                                        <a href="{% url 'shop-cart' %}"
                                            class="btn btn-sm btn-primary me-2 btnhover w-100">View Cart</a>
-                                        <a href="{% url 'shop_checkout' %}"
+                                        <a href="{% url 'shop-checkout' %}"
                                            class="btn btn-sm btn-outline-primary btnhover w-100">Checkout</a>
                                     </li>
                                 </ul>
@@ -166,7 +166,7 @@
                                         <span>{{ user.email }}</span>
                                     </div>
                                     <div class="dropdown-body">
-                                        <a href="{% url 'my_profile' %}"
+                                        <a href="{% url 'my-profile' %}"
                                            class="dropdown-item d-flex justify-content-between align-items-center ai-icon">
                                             <div>
                                                 <svg xmlns="http://www.w3.org/2000/svg" height="20px"
@@ -177,7 +177,7 @@
                                                 <span class="ms-2">Profile</span>
                                             </div>
                                         </a>
-                                        <a href="{% url 'shop_cart' %}"
+                                        <a href="{% url 'shop-cart' %}"
                                            class="dropdown-item d-flex justify-content-between align-items-center ai-icon">
                                             <div>
                                                 <svg xmlns="http://www.w3.org/2000/svg" height="20px"
@@ -297,7 +297,7 @@
                             <!--							<li class="sub-menu-down"><a href="javascript:void(0);"><span>Pages</span></a>-->
                             <!--								<ul class="sub-menu">-->
                             <!--									<li><a href="{% url 'about' %}"><span>About Us</span></a></li>-->
-                            <!--									<li><a href="{% url 'my_profile' %}">My Profile</a></li>-->
+                            <!--									<li><a href="{% url 'my-profile' %}">My Profile</a></li>-->
                             <!--									<li><a href="{% url 'services' %}">Services</a></li>-->
                             <!--									<li><a href="#">FAQ's</a></li>-->
                             <!--									<li><a href="#">Help Desk</a></li>-->
@@ -308,21 +308,21 @@
                             <!--									<li><a href="#">Error 404</a></li>-->
                             <!--								</ul>-->
                             <!--							</li>-->
-                            <li><a href="{% url 'book_grid_view_sidebar' %}"><span>Shop</span></a>
+                            <li><a href="{% url 'book-grid-view-sidebar' %}"><span>Shop</span></a>
                                 <!--								<ul class="sub-menu">-->
                                 <!--									<li><a href="{% url 'shop_grid' %}">Shop Grid</a></li>-->
                                 <!--									<li><a href="#">Shop Grid Sidebar</a></li>-->
                                 <!--									<li><a href="#">Shop List</a></li>-->
                                 <!--									<li><a href="#">Shop List Sidebar</a></li>-->
-                                <!--									<li><a href="{% url 'book_detail' %}">Shop Detail</a></li>-->
-                                <!--									<li><a href="{% url 'shop_cart' %}">Cart</a></li>-->
-                                <!--									<li><a href="{% url 'shop_checkout' %}">Checkout</a></li>-->
+                                <!--									<li><a href="{% url 'book-detail' %}">Shop Detail</a></li>-->
+                                <!--									<li><a href="{% url 'shop-cart' %}">Cart</a></li>-->
+                                <!--									<li><a href="{% url 'shop-checkout' %}">Checkout</a></li>-->
                                 <!--									<li><a href="{% url 'wishlist' %}">Wishlist</a></li>-->
                                 <!--									<li><a href="{% url 'login' %}">Login</a></li>-->
                                 <!--									<li><a href="#">Registration</a></li>-->
                                 <!--								</ul>-->
                             </li>
-                            <li><a href="{% url 'blog_grid_left_sidebar' %}"><span>Blog</span></a>
+                            <li><a href="{% url 'blog-grid-left-sidebar' %}"><span>Blog</span></a>
                                 <!--								<ul class="sub-menu">-->
                                 <!--									<li><a href="javascript:void(0);">Page Layout <i class="fa fa-angle-right"></i></a>-->
                                 <!--										<ul class="sub-menu">-->
@@ -534,7 +534,7 @@
                             <ul>
                                 <li><a href="{% url 'index' %}">Bookland</a></li>
                                 <li><a href="{% url 'services' %}">Services</a></li>
-                                <li><a href="{% url 'book_detail' %}">Book Details</a></li>
+                                <li><a href="{% url 'book-detail' %}">Book Details</a></li>
                                 <li><a href="#">Blog Details</a></li>
                                 <li><a href="{% url 'shop_grid' %}">Shop</a></li>
                             </ul>
@@ -546,7 +546,7 @@
                             <ul>
                                 <li><a href="{% url 'services' %}">Download</a></li>
                                 <li><a href="#">Help Center</a></li>
-                                <li><a href="{% url 'shop_cart' %}">Shop Cart</a></li>
+                                <li><a href="{% url 'shop-cart' %}">Shop Cart</a></li>
                                 <li><a href="{% url 'login' %}">Login</a></li>
                                 <li><a href="{% url 'about' %}">Partner</a></li>
                             </ul>

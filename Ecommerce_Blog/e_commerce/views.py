@@ -32,6 +32,9 @@ def wishlist(request):
 def shop_cart(request):
     return render(request, 'e_commerce/shop-cart.html')
 
+def shop_checkout(request):
+    return render(request, 'e_commerce/shop-checkout.html')
+
 def shop_grid(request):
     return render(request, 'e_commerce/shop-grid.html')
 
@@ -64,9 +67,6 @@ def blog_grid_left_sidebar(request):
 
 def blog_grid_no_sidebar(request):
     return render(request, 'e_commerce/blog-grid-no-sidebar.html')
-
-def shop_checkout(request):
-    return render(request, 'e_commerce/shop-checkout.html')
 
 def my_profile(request):
     return render(request, 'e_commerce/my-profile.html')
