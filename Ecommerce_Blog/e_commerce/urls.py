@@ -2,8 +2,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
 from . import views
-from.views import activate_account
-
+from .views import activate_account, book_detail
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -12,7 +11,7 @@ urlpatterns = [
     path('services/', views.services, name='services'),
     path('wishlist/', views.wishlist, name='wishlist'),
     path('book-list/', views.book_list, name='book-list'),
-    path('book-detail/', views.book_detail, name='book-detail'),
+    path('book-detail/<int:livre_id>/', book_detail, name="book-detail"),
     path('book-grid-view/', views.book_grid_view, name='book-grid-view'),
     path('book-grid-left-sidebar/', views.book_grid_left_sidebar, name='book-grid-left-sidebar'),
     path('book-grid-no-sidebar/', views.book_grid_no_sidebar, name='book-grid-no-sidebar'),
@@ -25,7 +24,7 @@ urlpatterns = [
     path('register/', views.inscription, name='register'),
     path("deconnexion/", views.deconnexion, name="deconnexion"),
     path('activate/<uidb64>/<token>/', activate_account, name='activate-account'),
-    path('shop-grid/', views.shop_grid, name='shop_grid'),
+    path('shop-grid/', views.shop_grid, name='shop-grid'),
     path('shop-cart/', views.shop_cart, name='shop-cart'),
     path('shop-checkout/', views.shop_checkout, name='shop-checkout'),
     path('my-profile/', views.my_profile, name='my-profile'),
