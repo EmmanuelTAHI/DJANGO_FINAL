@@ -25,18 +25,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- STYLESHEETS -->
-    <link rel="stylesheet" type="text/css"
-          href="{% static 'vendor/bootstrap-select/dist/css/bootstrap-select.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap-select/dist/css/bootstrap-select.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'icons/fontawesome/css/all.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'vendor/swiper/swiper-bundle.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
+<!--    AUTRE STYLE QUE J'AI MIS MOI MEME POUR VOIR-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/nouislider/nouislider.min.css' %}">
+
     <!-- GOOGLE FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     {% block style %}
     {% endblock style %}
@@ -607,9 +608,15 @@
 <script src="{% static 'vendor/counter/waypoints-min.js' %}"></script><!-- WAYPOINTS JS -->
 <script src="{% static 'vendor/counter/counterup.min.js' %}"></script><!-- COUNTERUP JS -->
 <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script><!-- SWIPER JS -->
+<script src="{% static 'vendor/countdown/counter.js' %}"></script><!-- COUNTER JS -->
+<script src="{% static 'vendor/wnumb/wNumb.js' %}"></script><!-- WNUMB -->
+<script src="{% static 'vendor/nouislider/nouislider.min.js' %}"></script><!-- NOUSLIDER MIN JS-->
 <script src="{% static 'js/dz.carousel.js' %}"></script><!-- DZ CAROUSEL JS -->
 <script src="{% static 'js/dz.ajax.js' %}"></script><!-- AJAX -->
 <script src="{% static 'js/custom.js' %}"></script><!-- CUSTOM JS -->
+<script src="{% static 'vendor/bootstrap-touchspin/bootstrap-touchspin.js' %}"></script><!-- BOOTSTRAP TOUCHSPIN JS -->
+
+
 
 {% block script %}
 {% endblock script %}

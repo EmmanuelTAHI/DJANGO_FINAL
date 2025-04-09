@@ -13,15 +13,15 @@
 							</div>
 							<div class="dz-content">
 								<div class="dz-header">
-									<h3 class="title">{{ livre.titre }}</h3>
+									<h3 class="title">Think and Grow Rich</h3>
 									<div class="shop-item-rating">
 										<div class="d-lg-flex d-sm-inline-flex d-flex align-items-center">
 											<ul class="dz-rating">
-												<li><i class="flaticon-star text-yellow"></i></li>
-												<li><i class="flaticon-star text-yellow"></i></li>
-												<li><i class="flaticon-star text-yellow"></i></li>
-												<li><i class="flaticon-star text-yellow"></i></li>
-												<li><i class="flaticon-star text-muted"></i></li>
+												<li><i class="flaticon-star text-yellow"></i></li>	
+												<li><i class="flaticon-star text-yellow"></i></li>	
+												<li><i class="flaticon-star text-yellow"></i></li>	
+												<li><i class="flaticon-star text-yellow"></i></li>		
+												<li><i class="flaticon-star text-muted"></i></li>		
 											</ul>
 											<h6 class="m-b0">4.0</h6>
 										</div>
@@ -47,14 +47,14 @@
 												</div>
 											</li>
 											<li><span>Editeur</span>{{ livre.editeur }}</li>
-											<li><span>Année</span>{{ livre.date_publication }}</li>
+											<li><span>Date de pubication</span>{{ livre.date_publication }}</li>
 										</ul>
 									</div>
 									<p class="text-1">{{ livre.description|truncatechars:800 }}</p>
 									<div class="book-footer">
 										<div class="price">
 											<h5>{{ livre.prix }} FCFA</h5>
-											<p class="p-lr10">$70.00</p>
+<!--											<p class="p-lr10">$70.00</p>-->
 										</div>
 										<div class="product-num">
 											<div class="quantity btn-quantity style-1 me-3">
@@ -74,19 +74,19 @@
 						</div>
 					</div>
 				</div>
-
+				
 				<div class="row">
 					<div class="col-xl-8">
 						<div class="product-description tabs-site-button">
                             <ul class="nav nav-tabs">
-                                <li><a data-bs-toggle="tab" href="#graphic-design-1" class="active">Détails du produit</a></li>
+                                <li><a data-bs-toggle="tab" href="#graphic-design-1" class="active">Details Product</a></li>
                                 <li><a data-bs-toggle="tab" href="#developement-1">Customer Reviews</a></li>
                             </ul>
 							<div class="tab-content">
 								<div id="graphic-design-1" class="tab-pane show active">
                                     <table class="table border book-overview">
                                         <tr>
-                                            <th>Titre du livre</th>
+                                            <th>Titre</th>
                                             <td>{{ livre.titre }}</td>
                                         </tr>
                                         <tr>
@@ -98,7 +98,7 @@
                                             <td>{{ livre.isbn }}</td>
                                         </tr>
 										<tr>
-                                            <th>Langue</th>
+                                            <th>Langage</th>
                                             <td>{{ livre.langue }}</td>
                                         </tr>
                                         <tr>
@@ -119,22 +119,22 @@
                                         </tr>
 										<tr>
                                             <th>Chapitres</th>
-                                            <td>{{livre.nombre_chapitres}}</td>
+                                            <td>{{ livre.nombre_chapitres }}</td>
                                         </tr>
 										<tr>
                                             <th>Topic</th>
                                             <td>{{ livre.nombre_topics }}</td>
                                         </tr>
                                         <tr class="tags">
-                                            <th>Tags</th>
-                                            <td>
+											<th>Tags</th>
+											<td>
 												{% for tag in livre.tags_ids.all %}
 												<a href="javascript:void(0);" class="badge">{{ tag.nom }}</a>
 												{% empty %}
 												<span>Aucun tag</span>
 												{% endfor %}
 											</td>
-                                        </tr>
+										</tr>
                                     </table>
                                 </div>
 								<div id="developement-1" class="tab-pane">
@@ -232,7 +232,6 @@
 										  </div>
 									   </div>
 									</div>
-
 								</div>
 							</div>
 						</div>
@@ -257,7 +256,7 @@
 												<span class="price-num">$45.4</span>
 												<del>$98.4</del>
 											</div>
-											<a href="{% url 'shop-cart' %}" class="btn btn-outline-primary btn-sm btnhover btnhover2"><i class="flaticon-shopping-cart-1 me-2"></i> Ajouter au panier</a>
+											<a href="{% url 'shop-cart' %}" class="btn btn-outline-primary btn-sm btnhover btnhover2"><i class="flaticon-shopping-cart-1 me-2"></i> Add to cart</a>
 										</div>
 									</div>
 								</div>
@@ -277,7 +276,7 @@
 												<span class="price-num">$45.4</span>
 												<del>$98.4</del>
 											</div>
-											<a href="{% url 'shop-cart' %}" class="btn btn-outline-primary btn-sm btnhover btnhover2"><i class="flaticon-shopping-cart-1 me-2"></i> Ajouter au panier</a>
+											<a href="{% url 'shop-cart' %}" class="btn btn-outline-primary btn-sm btnhover btnhover2"><i class="flaticon-shopping-cart-1 me-2"></i> Add to cart</a>
 										</div>
 									</div>
 								</div>
@@ -297,7 +296,7 @@
 												<span class="price-num">$45.4</span>
 												<del>$98.4</del>
 											</div>
-											<a href="{% url 'shop-cart' %}" class="btn btn-outline-primary btn-sm btnhover btnhover2"><i class="flaticon-shopping-cart-1 me-2"></i> Ajouter au panier</a>
+											<a href="{% url 'shop-cart' %}" class="btn btn-outline-primary btn-sm btnhover btnhover2"><i class="flaticon-shopping-cart-1 me-2"></i> Add to cart</a>
 										</div>
 									</div>
 								</div>
@@ -307,7 +306,7 @@
 				</div>
 			</div>
 		</section>
-
+		
 		<!-- Client Start-->
 		<div class="bg-white py-5">
 			<div class="container">
@@ -324,7 +323,7 @@
 			</div>
 		</div>
 		<!-- Client End-->
-
+		
 		<!-- Feature Box -->
 		<section class="content-inner">
 			<div class="container">
@@ -342,7 +341,7 @@
 					</div>
 					<div class=" col-lg-3 col-md-6 col-sm-6 col-6">
 						<div class="icon-bx-wraper style-2 m-b30 text-center">
-							<div class="icon-bx-lg">
+							<div class="icon-bx-lg"> 
 								<i class="fa-solid fa-book icon-cell"></i>
 							</div>
 							<div class="icon-content">
@@ -353,7 +352,7 @@
 					</div>
 					<div class="col-lg-3 col-md-6 col-sm-6 col-6">
 						<div class="icon-bx-wraper style-2 m-b30 text-center">
-							<div class="icon-bx-lg">
+							<div class="icon-bx-lg"> 
 								<i class="fa-solid fa-store icon-cell"></i>
 							</div>
 							<div class="icon-content">
@@ -364,7 +363,7 @@
 					</div>
 					<div class="col-lg-3 col-md-6 col-sm-6 col-6">
 						<div class="icon-bx-wraper style-2 m-b30 text-center">
-							<div class="icon-bx-lg">
+							<div class="icon-bx-lg"> 
 								<i class="fa-solid fa-leaf icon-cell"></i>
 							</div>
 							<div class="icon-content">
@@ -377,9 +376,9 @@
 			</div>
 		</section>
 		<!-- Feature Box End -->
-
+		
 		<!-- Newsletter -->
-		<section class="py-5 newsletter-wrapper" style="background-image: url('{% static 'images/background/bg1.jpg' %}'); background-size: cover;">
+		<section class="py-5 newsletter-wrapper" style="background-image: url({% static 'images/background/bg1.jpg' %}); background-size: cover;">
 			<div class="container">
 				<div class="subscride-inner">
 					<div class="row style-1 justify-content-xl-between justify-content-lg-center align-items-center text-xl-start text-center">
