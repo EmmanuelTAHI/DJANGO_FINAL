@@ -117,6 +117,7 @@ class Wishlist(models.Model):
 class Panier(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
+    statut = models.CharField(max_length=20, default='en cours')
 
     def total_panier(self):
         return sum(item.total() for item in self.items.all())

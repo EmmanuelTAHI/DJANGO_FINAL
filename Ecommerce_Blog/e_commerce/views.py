@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from .form import AuthForm
-from .models import Livre, Wishlist
+from .models import Livre, Wishlist, Panier, LignePanier
 from django.http import JsonResponse
 
 
@@ -38,19 +38,51 @@ def my_profile(request):
 # 🛒 Pages E-commerce / Boutique
 # ==============================
 
+@login_required
+def shop_cart(request):
+    try:
+        # On récupère le panier en cours pour l'utilisateur connecté
+        panier = Panier.objects.get(user=request.user, statut='en cours')
 
-def checkout(request):
-    return render(request, 'e_commerce/checkout.html')
+        # On récupère les lignes du panier et on optimise avec select_related pour éviter les requêtes multiples
+        items = panier.items.select_related('livre')
+    except Panier.DoesNotExist:
+        panier = None
+        items = []
+
+    # On calcule le total à payer
+    total = sum(item.total() for item in items)
+
+    # On passe le panier et ses items au template
+    return render(request, 'e_commerce/shop-cart.html', {
+        'items': items,
+        'total': total,
+        'panier': panier
+    })
 
 @login_required
-def add_to_cart(request, livre_id):
-    try:
-        livre = Livre.objects.get(id=livre_id)
-        # Logique pour ajouter au panier (par exemple, avec un modèle Cart)
-        # Pour l'instant, redirige vers la page du panier
-        return redirect('shop_cart')  # Redirige vers la page du panier
-    except Livre.DoesNotExist:
-        return redirect('wishlist')  # Retourne à la wishlist si le livre n'existe pas
+def remove_from_cart(request, item_id):
+    item = get_object_or_404(LignePanier, id=item_id, panier__user=request.user)
+    item.delete()
+    messages.success(request, f"{item.livre.titre} retiré du panier.")
+    return redirect('shop-cart')
+
+@login_required
+def add_to_cart(request):
+    livre_id = request.POST.get('livre_id')
+    if not livre_id:
+        return JsonResponse({'success': False, 'error': 'ID manquant'})
+
+    livre = get_object_or_404(Livre, id=livre_id)
+    panier, created = Panier.objects.get_or_create(user=request.user, statut='en cours')
+    ligne, created = LignePanier.objects.get_or_create(panier=panier, livre=livre)
+
+    if not created:
+        ligne.quantite += 1
+        ligne.save()
+
+    return JsonResponse({'success': True, 'titre': livre.titre})
+
 
 def wishlist(request):
     if request.user.is_authenticated:

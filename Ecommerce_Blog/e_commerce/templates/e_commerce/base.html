@@ -80,7 +80,7 @@
                                         <path d="M0 0h24v24H0V0z" fill="none"/>
                                         <path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/>
                                     </svg>
-                                    <span class="badge">21</span>
+                                    <span class="badge">14</span>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -93,60 +93,46 @@
                                     <span class="badge">5</span>
                                 </button>
                                 <ul class="dropdown-menu cart-list">
-                                    <li class="cart-item">
-                                        <div class="media">
-                                            <div class="media-left">
-                                                <a href="#">
-                                                    <img alt="" class="media-object" src="{% static 'images/books/small/pic1.jpg' %}">
-                                                </a>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="dz-title"><a href="#"
-                                                                        class="media-heading">Real Life</a></h6>
-                                                <span class="dz-price">$28.00</span>
-                                                <span class="item-close">×</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="cart-item">
-                                        <div class="media">
-                                            <div class="media-left">
-                                                <a href="#">
-                                                    <img alt="" class="media-object"
-                                                         src="{% static 'images/books/small/pic2.jpg' %}">
-                                                </a>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="dz-title"><a href="#" class="media-heading">Home</a></h6>
-                                                <span class="dz-price">$28.00</span>
-                                                <span class="item-close">×</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="cart-item">
-                                        <div class="media">
-                                            <div class="media-left">
-                                                <a href="#">
-                                                    <img alt="" class="media-object"
-                                                         src="{% static 'images/books/small/pic3.jpg' %}">
-                                                </a>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="dz-title"><a href="#" class="media-heading">Such a fun age</a></h6>
-                                                <span class="dz-price">$28.00</span>
-                                                <span class="item-close">×</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="cart-item text-center">
-                                        <h6 class="text-secondary">Total = $500</h6>
-                                    </li>
-                                    <li class="text-center d-flex">
-                                        <a href="{% url 'shop-cart' %}"
-                                           class="btn btn-sm btn-primary me-2 btnhover w-100">View Cart</a>
-                                        <a href="{% url 'shop-checkout' %}"
-                                           class="btn btn-sm btn-outline-primary btnhover w-100">Checkout</a>
-                                    </li>
+                                    {% if request.user.is_authenticated %}
+                                        {% with panier=panier_user %}
+                                            {% if panier %}
+                                                {% for item in panier.lignepanier_set.all %}
+                                                    <li class="cart-item">
+                                                        <div class="media">
+                                                            <div class="media-left">
+                                                                <a href="{% url 'book-detail' item.livre.id %}">
+                                                                    <img alt="{{ item.livre.titre }}" class="media-object" src="{{ item.livre.couverture.url }}">
+                                                                </a>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <h6 class="dz-title">
+                                                                    <a href="{% url 'book-detail' item.livre.id %}" class="media-heading">{{ item.livre.titre }}</a>
+                                                                </h6>
+                                                                <span class="dz-price">{{ item.livre.prix }} FCFA x {{ item.quantite }}</span>
+                                                                <!-- Bouton de suppression (optionnel à relier) -->
+                                                                <span class="item-close">×</span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                {% endfor %}
+                                                <li class="cart-item text-center">
+                                                    <h6 class="text-secondary">Total = {{ panier.total_panier }} FCFA</h6>
+                                                </li>
+                                                <li class="text-center d-flex">
+                                                    <a href="{% url 'shop-cart' %}" class="btn btn-sm btn-primary me-2 btnhover w-100">Show cartr</a>
+                                                    <a href="{% url 'shop-checkout' %}" class="btn btn-sm btn-outline-primary btnhover w-100">Checkout</a>
+                                                </li>
+                                            {% else %}
+                                                <li class="cart-item text-center">
+                                                    <p>Votre panier est vide.</p>
+                                                </li>
+                                            {% endif %}
+                                        {% endwith %}
+                                    {% else %}
+                                        <li class="cart-item text-center">
+                                            <p>Connectez-vous pour voir votre panier.</p>
+                                        </li>
+                                    {% endif %}
                                 </ul>
                             </li>
                             <li class="nav-item dropdown profile-dropdown ms-4">

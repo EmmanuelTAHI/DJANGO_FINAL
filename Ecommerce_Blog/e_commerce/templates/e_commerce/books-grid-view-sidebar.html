@@ -391,7 +391,8 @@
                                         <div class="price">
                                             <span class="price-num">{{ livre.prix }} FCFA</span>
                                         </div>
-                                        <a href="{% url 'shop-cart' %}" class="btn btn-secondary box-btn btnhover btnhover2"><i class="flaticon-shopping-cart-1 m-r10"></i> Add to cart</a>
+                                        <a href="#" class="btn btn-secondary box-btn btnhover btnhover2 add-to-cart-btn" data-livre-id="{{ livre.id }}"><i class="flaticon-shopping-cart-1 m-r10"></i>Add to cart</a>
+<!--                                        <a href="{% url 'add-to-cart' livre.id %}" class="btn btn-secondary box-btn btnhover btnhover2"><i class="flaticon-shopping-cart-1 m-r10"></i>Add to cart</a>-->
                                     </div>
                                 </div>
                             </div>
