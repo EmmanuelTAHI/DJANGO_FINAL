@@ -1,4 +1,4 @@
-{% extends 'e_commerce/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
@@ -33,7 +33,7 @@
 									</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="{% url 'book-grid-view-sidebar' %}">
+									<a class="nav-link" href="{% url 'e_commerce:book-grid-view-sidebar' %}">
 										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M3 22H21C21.2652 22 21.5196 21.8946 21.7071 21.7071C21.8946 21.5196 22 21.2652 22 21V3C22 2.73478 21.8946 2.48043 21.7071 2.29289C21.5196 2.10536 21.2652 2 21 2H3C2.73478 2 2.48043 2.10536 2.29289 2.29289C2.10536 2.48043 2 2.73478 2 3V21C2 21.2652 2.10536 21.5196 2.29289 21.7071C2.48043 21.8946 2.73478 22 3 22ZM13 4H20V11H13V4ZM13 13H20V20H13V13ZM4 4H11V20H4V4Z" fill="#AAAAAA"></path>
 										</svg>
@@ -144,7 +144,7 @@
 											<li><span>Date de publication</span>{{ livre.date_publication }}</li>
 										</ul>
 										<div class="d-flex">
-											<a href="{% url 'shop-cart' %}" class="btn btn-secondary btnhover btnhover2"><i class="flaticon-shopping-cart-1 m-r10"></i> Ajouter au panier</a>
+											<a href="{% url 'e_commerce:shop-cart' %}" class="btn btn-secondary btnhover btnhover2"><i class="flaticon-shopping-cart-1 m-r10"></i> Ajouter au panier</a>
 											<div class="bookmark-btn style-1">
 												<input class="form-check-input" type="checkbox" id="flexCheckDefault6">
 												<label class="form-check-label" for="flexCheckDefault6">

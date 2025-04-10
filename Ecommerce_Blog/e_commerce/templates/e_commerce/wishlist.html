@@ -1,4 +1,4 @@
-{% extends 'e_commerce/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
@@ -45,8 +45,8 @@
 												<input type="text" value="1" name="quantity_{{ item.livre.id }}"/>
 											</div>
 										</td>
-										<td class="product-item-totle"><a href="{% url 'shop-cart' item.livre.id %}" class="btn btn-primary btnhover">Add To Cart</a></td>
-										<td class="product-item-close"><a href="{% url 'remove_from_wishlist' item.livre.id %}" class="ti-close"></a></td>
+										<td class="product-item-totle"><a href="{% url 'e_commerce:add-to-cart' item.livre.id %}" class="btn btn-primary btnhover">Add To Cart</a></td>
+										<td class="product-item-close"><a href="{% url 'e_commerce:remove_from_wishlist' item.livre.id %}" class="ti-close"></a></td>
 									</tr>
 									{% empty %}
 									<tr>

@@ -1,4 +1,4 @@
-{% extends 'e_commerce/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
@@ -33,15 +33,15 @@
 											<span>Profile</span></a>
 										</li>
 										<li>
-											<a href="{% url 'shop-cart' %}"><i class="flaticon-shopping-cart-1"></i>
+											<a href="{% url 'e_commerce:shop-cart' %}"><i class="flaticon-shopping-cart-1"></i>
 											<span>My Cart</span></a>
 										</li>
 										<li>
-											<a href="{% url 'wishlist' %}"><i class="far fa-heart" aria-hidden="true"></i>
+											<a href="{% url 'e_commerce:wishlist' %}"><i class="far fa-heart" aria-hidden="true"></i>
 											<span>Wishlist</span></a>
 										</li>
 										<li>
-											<a href="{% url 'book-grid-view-sidebar' %}"><i class="fa fa-briefcase" aria-hidden="true"></i>
+											<a href="{% url 'e_commerce:book-grid-view-sidebar' %}"><i class="fa fa-briefcase" aria-hidden="true"></i>
 											<span>Shop</span></a>
 										</li>
 										<li>
@@ -57,7 +57,7 @@
 											<span>Privacy Policy</span></a>
 										</li>
 										<li>
-											<a href="{% url 'deconnexion' %}"><i class="fas fa-sign-out-alt" aria-hidden="true"></i>
+											<a href="{% url 'e_commerce:deconnexion' %}"><i class="fas fa-sign-out-alt" aria-hidden="true"></i>
 											<span>Log Out</span></a>
 										</li>
 									</ul>

@@ -1,4 +1,4 @@
-{% extends 'e_commerce/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
@@ -10,7 +10,7 @@
 						<h1>Cart</h1>
 						<nav aria-label="breadcrumb" class="breadcrumb-row">
 							<ul class="breadcrumb">
-								<li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+								<li class="breadcrumb-item"><a href="{% url 'e_commerce:index' %}">Home</a></li>
 								<li class="breadcrumb-item">Cart</li>
 							</ul>
 						</nav>
@@ -50,7 +50,7 @@
 										</td>
 										<td class="product-item-totle">{{ item.total }} FCFA</td>
 										<td class="product-item-close">
-											<a href="{% url 'remove-from-cart' item.id %}" class="ti-close"></a>
+											<a href="{% url 'e_commerce:remove-from-cart' item.id %}" class="ti-close"></a>
 										</td>
 									</tr>
 									{% empty %}
@@ -87,7 +87,7 @@
 									<input type="text" class="form-control" placeholder="Coupon Code">
 								</div>
 								<div class="form-group">
-									<a href="{% url 'shop-cart' %}" class="btn btn-primary btnhover" type="button">Apply Coupon</a>
+									<a href="{% url 'e_commerce:shop-cart' %}" class="btn btn-primary btnhover" type="button">Apply Coupon</a>
 								</div>
 							</form>
 						</div>
@@ -116,7 +116,7 @@
 								</tbody>
 							</table>
 							<div class="form-group m-b25">
-								<a href="{% url 'shop-checkout' %}" class="btn btn-primary btnhover" type="button">Proceed to Checkout</a>
+								<a href="{% url 'e_commerce:shop-checkout' %}" class="btn btn-primary btnhover" type="button">Proceed to Checkout</a>
 							</div>
 						</div>
 					</div>

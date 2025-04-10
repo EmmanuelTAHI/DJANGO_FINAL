@@ -1,4 +1,4 @@
-{% extends 'e_commerce/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
@@ -11,7 +11,7 @@
 					<h1>Login</h1>
 					<nav aria-label="breadcrumb" class="breadcrumb-row">
 						<ul class="breadcrumb">
-							<li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+							<li class="breadcrumb-item"><a href="{% url 'e_commerce:index' %}">Home</a></li>
 							<li class="breadcrumb-item">Login</li>
 						</ul>
 					</nav>
@@ -65,7 +65,7 @@
 										<input name="dzName" required="" class="form-control" placeholder="Your Email Id" type="email">
 									</div>
 									<div class="text-left">
-										<a class="btn btn-outline-secondary btnhover m-r10" data-bs-toggle="tab" href="{% url 'login' %}">Back</a>
+										<a class="btn btn-outline-secondary btnhover m-r10" data-bs-toggle="tab" href="{% url 'e_commerce:login' %}">Back</a>
 										<button class="btn btn-primary btnhover">Submit</button>
 									</div>
 								</form>
